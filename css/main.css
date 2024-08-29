@@ -13009,15 +13009,9 @@ textarea.form-control-lg {
  * @section Base Styles
  */
 body {
-	font-size: 125%;
-	margin: 0 auto;
-	max-width: 42em;
-	width: 88%;
+	font-family: Popins, sans-serif;
 }
 
-input,
-textarea,
-select,
-button {
-	font: inherit;
+.navbar-logo {
+	font-weight: 700;
 }
