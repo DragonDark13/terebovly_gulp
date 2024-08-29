@@ -9,9 +9,8 @@ import pkg from './package.json';
 // Конфігурація
 const configs = {
     name: 'BuildToolsCookbook',
-    files: ['main.js', 'detects.js', 'another-file.js'],
-    formats: ['iife', 'es', 'amd', 'cjs'],
-    default: 'iife',
+    // files: ['main.js', 'detects.js', 'another-file.js'],
+    files: ['main.js'],
     pathIn: 'src/js',
     pathOut: 'dist/js',
     minify: true,
@@ -22,29 +21,25 @@ const configs = {
 const banner = `/*! ${configs.name ? configs.name : pkg.name} v${pkg.version} | (c) ${new Date().getFullYear()} ${pkg.author.name} | ${pkg.license} License | ${pkg.repository.url} */`;
 
 // Функція для створення виходу
+// Функція для створення виходу (залишаємо тільки js формат)
 const createOutput = (filename, minify) => {
-    return configs.formats.map(format => {
-        const output = {
-            file: `${configs.pathOut}/${filename}${format === configs.default ? '' : `.${format}`}${minify ? '.min' : ''}.js`,
-            format: format,
-            banner: banner
-        };
-        if (format === 'iife') {
-            output.name = configs.name ? configs.name : pkg.name;
-        }
-        if (minify) {
-            output.plugins = [terser()];
-        }
+    const output = {
+        file: `${configs.pathOut}/${filename}${minify ? '.min' : ''}.js`,
+        format: 'es',
+        banner: banner,
+        sourcemap: configs.sourceMap
+    };
 
-        output.sourcemap = configs.sourceMap;
+    if (minify) {
+        output.plugins = [terser()];
+    }
 
-        return output;
-    });
+    return output;
 };
 
 // Функція для створення всіх виходів
 const createOutputs = (filename) => {
-    const outputs = createOutput(filename);
+    const outputs = [createOutput(filename)];
 
     if (!configs.minify) return outputs;
 
