@@ -3,11 +3,94 @@
  */
 
 body {
-  font-family: Popins, sans-serif;
+  font-family: Poppins, sans-serif;
+}
+
+img{
+  max-width: 100%;
+}
+
+.navbar {
+  background-color: transparent;
+  z-index: 100;
+  transition: background-color 0.2s ease-in-out;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
 }
 
 .navbar-logo {
   font-weight: 700;
   //font-size: 26px;
   //line-height: 33px;
+}
+
+.bg_section {
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: auto;
+  padding: 20px;
+  min-height: 95vh;
+  padding-top: 109.995px;
+
+  .image_block {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+
+
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.3)),
+    url('../../img/bg.jpeg');
+    filter: grayscale(100%);
+    opacity: 0.3;
+    background-attachment: initial;
+  }
+
+  .sb-container {
+    display: flex;
+    flex: 100%;
+
+    padding: 0;
+    position: relative;
+    z-index: 200;
+    height: 100%;
+  }
+
+  .bg_section_main_title {
+    font-size: 4rem;
+    color: #fff;
+    letter-spacing: 0;
+  }
+
+  .bg_section_small_title {
+    color: #fff;
+  }
+
+}
+
+.sb-section-opt-dark {
+  background-color: #948a8a;
+}
+
+.header_nav_menu{
+  a.nav-link{
+    color: #fff;
+
+  }
+}
+
+
+.sb-section-opt-light {
+    background-color: #fff;
 }
