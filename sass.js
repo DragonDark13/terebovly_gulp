@@ -30,11 +30,18 @@ var getOptions = function (file, filename, minify) {
 	};
 };
 
+var replacePaths = function (css) {
+    return css.replace(/(\.\.\/\.\.\/img\/)/g, '../img/');
+};
+
 var writeFile = function (pathOut, fileName, fileData, printBanner = true) {
     // Create the directory path
     fs.mkdir(pathOut, { recursive: true }, function (err) {
         // If there's an error, throw it
         if (err) throw err;
+
+        // Заміна шляхів до зображень
+        fileData = replacePaths(fileData.toString());
 
         // Write the file to the path
         fs.writeFile(`${pathOut}/${fileName}`, fileData, function (err) {

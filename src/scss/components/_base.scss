@@ -6,7 +6,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -83,8 +83,8 @@ img{
   background-color: #948a8a;
 }
 
-.header_nav_menu{
-  a.nav-link{
+.header_nav_menu {
+  a.nav-link {
     color: #fff;
 
   }
@@ -92,5 +92,76 @@ img{
 
 
 .sb-section-opt-light {
-    background-color: #fff;
+  background-color: #fff;
+}
+
+.sb-section {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  z-index: auto;
+  padding: 20px;
+}
+
+section.sb-section {
+  overflow: hidden;
+}
+
+.sb-row-opt-padding-bottom-large {
+  padding-bottom: 80px;
+}
+
+.sb-row-opt-padding-top-large {
+  padding-top: 80px;
+}
+
+.sb-section-opt-light .sb-text-image__content-title {
+  color: #C31755;
+}
+
+option-title-show-decoration-square.sb-section-opt-light .sb-section-title::before, .option-title-show-decoration-square.sb-section-opt-light .sb-text-image__content-title::before {
+  background-color: #C31755;
+}
+
+.option-title-show-decoration-square .sb-section-title:not(.is-title-empty)::before, .option-title-show-decoration-square .sb-text-image__content-title:not(.is-title-empty)::before {
+  display: inline-block;
+  content: '';
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.375em;
+}
+
+.sb-section-opt-light a, .sb-section-opt-light a:link, .sb-section-opt-light a:visited {
+  color: #53513F;
+}
+
+.sb-section-opt-light .btn-outline-secondary, .sb-section-opt-light .btn-outline-secondary:link, .sb-section-opt-light .btn-outline-secondary:visited {
+  color: #191813;
+  border-color: #191813;
+  background-color: transparent;
+}
+
+.sb-section-opt-light .btn-outline-secondary:hover, .sb-section-opt-light .btn-outline-secondary:link:hover, .sb-section-opt-light .btn-outline-secondary:visited:hover {
+  color: #fff;
+  border-color: #C31755;
+  background-color: #C31755;
+}
+
+.btn {
+  transition: all .15s ease-in-out;
+}
+
+.sb-section-opt-light:nth-of-type(2n+3) {
+  background-color: #ECECE9;
+}
+
+.sb-text-image__content-title {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.sb-items-grid__content {
+    margin-bottom: 40px;
 }

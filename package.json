@@ -16,15 +16,18 @@
     "js": "rollup --config",
     "css": "node sass.js",
     "svg": "svgo -f src/svg dist/svg -r --disable=removeViewBox,removeTitle",
-    "img": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
+    "img-prod": "imagemin src/img/* --out-dir=dist/img --plugin=pngquant --plugin=mozjpeg --plugin=pngcrush --plugin=zopfli",
+    "img": "imagemin src/img/* --out-dir=dist/img",
     "copy": "recursive-copy src/copy dist",
-    "build-dirty": "npm-run-all -p js css svg img copy",
+    "html": "posthtml src/copy/*.html --config posthtml.config.js --out dist/",
+    "copy-and-html": "npm-run-all copy html",
+    "build-dirty": "npm-run-all -p js css svg img copy-and-html",
     "build": "npm-run-all -s clean build-dirty",
     "watch-css": "chokidar ./src/**/*.scss -c \"cmd /c npm run css\"",
     "watch-js": "chokidar ./src/**/*.js -c \"cmd /c npm run js\"",
     "watch-svg": "chokidar ./src/**/*.svg -c \"cmd /c npm run svg\"",
     "watch-img": "chokidar ./src/img/**/*.* -c \"cmd /c npm run img\"",
-    "watch-copy": "chokidar ./src/copy/*.* -c \"cmd /c npm run copy && browser-sync reload\"",
+    "watch-copy": "chokidar ./src/copy/*.* -c \"cmd /c npm run copy-and-html && browser-sync reload\"",
     "watch": "npm-run-all -p build watch-css watch-js watch-svg watch-img watch-copy",
     "server-start": "browser-sync start --files 'dist' --server 'dist'",
     "server": "npm-run-all -p watch server-start",
@@ -32,6 +35,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
     "browser-sync": "^2.26.14",
     "chokidar-cli": "^2.1.0",
     "gh-pages": "^6.1.1",
@@ -41,6 +45,9 @@
     "imagemin-pngquant": "^8.0.0",
     "imagemin-zopfli": "^6.0.0",
     "npm-run-all": "^4.1.5",
+    "posthtml": "^0.16.6",
+    "posthtml-cli": "^0.10.0",
+    "posthtml-replace": "^0.1.3",
     "recursive-fs": "^2.1.0",
     "rollup": "^2.6.1",
     "rollup-plugin-copy": "^3.5.0",
@@ -53,6 +60,7 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",
     "bootstrap": "^5.3.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "postcss-url": "^10.1.3"
   }
 }

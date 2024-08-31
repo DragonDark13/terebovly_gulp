@@ -5,6 +5,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss'; // Для обробки CSS
 import copy from 'rollup-plugin-copy'; // Для копіювання файлів
 import pkg from './package.json';
+import replace from '@rollup/plugin-replace';
+import url from 'postcss-url';
+
 
 // Конфігурація
 const configs = {
@@ -56,22 +59,21 @@ const createExport = () => {
             input: `${configs.pathIn}/${file}`,
             output: createOutputs(filename),
             plugins: [
+                replace({
+                    preventAssignment: true,
+                    '../img/': './img/'  // Заміна шляхів до зображень
+                }),
                 resolve(), // Розв'язування пакетів node_modules
                 commonjs(), // Перетворення CommonJS модулів в ES6
-                postcss({extract: 'bundle.css'}), // Витягування CSS
-                // copy({
-                //     targets: [
-                //         {
-                //             src: 'node_modules/bootstrap/dist/js/bootstrap.min.js',
-                //             dest: 'dist/bootstrap'
-                //         }, {
-                //             src: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
-                //             dest: 'dist/bootstrap'
-                //         }
-                //
-                //         // Копіювання Bootstrap
-                //     ]
-                // })
+                postcss({
+                    extract: 'main.css',
+                    plugins: [
+                        url({
+                            url: 'rebase', // Переносить ресурси відносно нового місця
+                            assetsPath: 'dist/img', // Вказує новий шлях до зображень
+                        }),
+                    ]
+                }), // Витягування CSS
             ]
         };
     });
