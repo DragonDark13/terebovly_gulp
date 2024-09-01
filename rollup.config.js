@@ -59,10 +59,7 @@ const createExport = () => {
             input: `${configs.pathIn}/${file}`,
             output: createOutputs(filename),
             plugins: [
-                replace({
-                    preventAssignment: true,
-                    '../img/': './img/'  // Заміна шляхів до зображень
-                }),
+
                 resolve(), // Розв'язування пакетів node_modules
                 commonjs(), // Перетворення CommonJS модулів в ES6
                 postcss({
@@ -73,7 +70,9 @@ const createExport = () => {
                             assetsPath: 'dist/img', // Вказує новий шлях до зображень
                         }),
                     ]
-                }), // Витягування CSS
+                }),
+
+                // Витягування CSS
             ]
         };
     });
