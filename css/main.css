@@ -13281,3 +13281,23 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 .footer_navbar .nav-item:first-child > a {
 	padding-left: 0;
 }
+
+.social-icons {
+	padding-left: 0;
+	margin-bottom: 0;
+}
+.social-icons li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.social-icons img {
+	width: 20px;
+	display: block;
+}
+.social-icons svg {
+	width: 20px;
+	/* font-size: 20px; */
+	height: 20px;
+}
