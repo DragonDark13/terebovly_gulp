@@ -13020,7 +13020,11 @@ img {
 	max-width: 100%;
 }
 
-.navbar {
+.sb-section-opt-light div, .sb-section-opt-light h1, .sb-section-opt-light .h1, .sb-section-opt-light h2, .sb-section-opt-light .h2, .sb-section-opt-light h3, .sb-section-opt-light .h3, .sb-section-opt-light h4, .sb-section-opt-light .h4, .sb-section-opt-light p, .sb-section-opt-light span, .sb-section-opt-light input {
+	color: #53513F;
+}
+
+header.navbar {
 	background-color: transparent;
 	z-index: 100;
 	transition: background-color 0.2s ease-in-out;
@@ -13146,6 +13150,25 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 	transition: all 0.15s ease-in-out;
 }
 
+.btn-primary {
+	color: #fff;
+	border-color: #C31755;
+	background-color: #C31755;
+}
+.btn-primary:hover {
+	color: #fff;
+	border-color: #951241;
+	background-color: #951241;
+}
+.btn-primary:focus, .btn-primary:link:focus, .btn-primary:visited:focus {
+	box-shadow: 0 0 0 2px #fff, 0 0 0 4px #E6276C;
+}
+
+.btn-block {
+	display: block;
+	width: 100%;
+}
+
 .sb-section-opt-light:nth-of-type(2n+3) {
 	background-color: #ECECE9;
 }
@@ -13202,4 +13225,59 @@ option-title-show-decoration-square.sb-section-opt-light .sb-section-title::befo
 	width: 1.25rem;
 	height: 1.25rem;
 	fill: #53513F;
+}
+
+.form__input-checkbox-wrapper .form__input--checkbox, .form__input-checkbox-wrapper .form__input--radio, .form__input-radio-wrapper .form__input--checkbox, .form__input-radio-wrapper .form__input--radio {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.form__input-checkbox-wrapper .form__label, .form__input-radio-wrapper .form__label {
+	padding-left: 25px;
+	min-height: 18px;
+	position: relative;
+	margin: 0;
+	color: #191813;
+}
+.form__input-checkbox-wrapper .form__label::before, .form__input-radio-wrapper .form__label::before {
+	display: block;
+	content: "";
+	width: 18px;
+	height: 18px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 0px;
+	border-style: solid;
+	border-width: 2px;
+	top: 2px;
+}
+
+.sb-section-opt-light .form__input-checkbox-wrapper .form__label::before, .sb-section-opt-light .form__input-radio-wrapper .form__label::before {
+	background-color: #fff;
+	color: #191813;
+	border-color: #948A8A;
+}
+
+.contact-form__btn {
+	font-size: 1rem;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.sb-section-opt-dark div, .sb-section-opt-dark h1, .sb-section-opt-dark .h1, .sb-section-opt-dark h2, .sb-section-opt-dark .h2, .sb-section-opt-dark h3, .sb-section-opt-dark .h3, .sb-section-opt-dark h4, .sb-section-opt-dark .h4, .sb-section-opt-dark p, .sb-section-opt-dark span, .sb-section-opt-dark input {
+	color: #fff;
+}
+
+.sb-section-opt-dark a, .sb-section-opt-dark a:hover, .sb-section-opt-dark a:focus, .sb-section-opt-dark a:active {
+	color: #fff;
+}
+
+.sb-section-opt-dark .navbar-brand, .sb-section-opt-dark .navbar-brand:link, .sb-section-opt-dark .navbar-brand:visited {
+	color: #fff;
+}
+
+.footer_navbar .nav-item:first-child > a {
+	padding-left: 0;
 }

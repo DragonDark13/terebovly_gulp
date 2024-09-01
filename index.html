@@ -231,12 +231,16 @@
                                 <label for="message" class="form-label">Message</label>
                                 <textarea class="form-control form-control-lg rounded-0 border-2" id="message" rows="3"></textarea>
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input rounded-0" id="consent" required="">
-                                <label class="form-check-label" for="consent">I allow this website to store my
-                                    submission so they can respond to my inquiry. *</label>
+                            <div class="mb-3 form-check form__input-checkbox-wrapper ps-0">
+                                <input type="checkbox" class="form-check-input rounded-0 form__input--checkbox" id="consent" required="">
+                                <label class="form-check-label form__label" for="consent">I allow this website to store
+                                    my
+                                    submission so they can respond to my inquiry. <span class="form__label-required" title="This field is required">*</span></label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <div class="d-grid gap-2 d-md-block">
+                                <button type="submit" class="btn btn-primary btn-lg rounded-0 btn-block contact-form__btn">Submit
+                                </button>
+                            </div>
                         </form>
 
                     </div>
@@ -267,12 +271,12 @@
                                                 <ul class="social-icons list-inline">
                                                     <li class="list-inline-item">
                                                         <a href="https://www.facebook.com/terebovlia.tic" target="_blank" rel="noreferrer">
-                                                            <i class="fa fa-facebook"></i>
+                                                            <img src="./svg/facebook.svg" alt="">
                                                         </a>
                                                     </li>
                                                     <li class="list-inline-item">
                                                         <a href="https://www.instagram.com/tourcenter.terebovlia" target="_blank" rel="noreferrer">
-                                                            <i class="fa fa-instagram"></i>
+                                                            <img src="./svg/instagram.svg" alt="">
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -339,53 +343,53 @@
 </section>
 
 <footer>
-    <section id="footer" class="sb-section-opt-dark">
+    <section id="footer" class="sb-section-opt-dark sb-section">
         <div class="container">
-            <div class="row">
+            <div class="row sb-row-opt-padding-top-large
+              sb-row-opt-padding-bottom-large">
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 sb-footer-simple-social__nav-col">
-                    <div class="sb-footer-simple-social__nav-wrapper">
-                        <h2 class="sb-title sb-footer__branding">
-                            <a class="brand sb-brand-default org" href="/" skip-data-sb="">
+                    <a class="navbar-brand" href="#">
 
-                                tuctereb
+                        tuctereb
 
-                            </a>
-                        </h2>
-                        <nav aria-label="Secondary" class="sb-footer__nav">
-                            <ul class="sb-footer__nav-list">
+                    </a>
+                    <nav class="navbar footer_navbar navbar-expand pb-0 pt-0">
+
+                        <div class="collapse navbar-collapse">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
-                                <li class="" data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="27ecac0a-82db-4b35-8205-a8eb2e62fc6f">
-                                    <a class="sb-link  " data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="27ecac0a-82db-4b35-8205-a8eb2e62fc6f" href="/index#services" target="">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
                                         НАШІ ПОСЛУГИ
                                     </a>
                                 </li>
 
 
-                                <li class="" data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="ecc22280-e47d-463f-acb3-6e97afc12dea">
-                                    <a class="sb-link  " data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="ecc22280-e47d-463f-acb3-6e97afc12dea" href="javascript:void(0);" target="">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
                                         Schedule appointment
                                     </a>
                                 </li>
 
 
-                                <li class="" data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="44d157a4-0854-4ef3-b33f-5ee1a550d8e4">
-                                    <a class="sb-link  " data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="44d157a4-0854-4ef3-b33f-5ee1a550d8e4" href="/intake-form" target="">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/intake-form">
                                         Complete intake
                                     </a>
                                 </li>
 
 
-                                <li class="" data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="865855a2-4114-4145-b578-1c58f58db425">
-                                    <a class="sb-link  " data-component-field="navigationLink" data-sb-field="" data-sb-is-link="true" data-sb-type="" data-sb-uuid="865855a2-4114-4145-b578-1c58f58db425" href="/index#contact" target="">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
                                         Contact
                                     </a>
                                 </li>
 
 
                             </ul>
-                        </nav>
-                    </div>
+                        </div>
+                    </nav>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 sb-footer__social">
                     <ul class="social-icons">
